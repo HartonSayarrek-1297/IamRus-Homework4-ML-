@@ -38,7 +38,7 @@ model = models.Sequential([
     layers.Conv2D(32, (3,3), strides=2, padding='same', activation='relu', kernel_regularizer=regularizers.l2(0.0001)),
     layers.Conv2D(64, (3,3), activation='relu', kernel_regularizer=regularizers.l2(0.0001)),
     layers.MaxPooling2D((2,2)),
-    layers.Conv2D(128, (3,3), activation='relu'),#, kernel_regularizer=regularizers.l2(0.0001)),
+    layers.Conv2D(128, (3,3), activation='relu'),
     layers.AveragePooling2D((2,2)),
     layers.Flatten(),
     
@@ -46,7 +46,6 @@ model = models.Sequential([
     layers.Dense(128, activation='relu', kernel_regularizer=regularizers.l2(0.0001)),
     layers.Dropout(0.3),
     layers.Dense(64, activation='relu', kernel_regularizer=regularizers.l2(0.0001)),
-    # layers.Dropout(0.3),
     layers.Dense(32, activation='relu'),
     
     layers.Dense(10, activation='softmax')
@@ -71,7 +70,7 @@ history = model.fit(
     x_train, y_train,
     epochs=30,
     validation_split=0.1,
-    batch_size=64,
+    batch_size=128,
     callbacks=[early_stop]
 )
 
