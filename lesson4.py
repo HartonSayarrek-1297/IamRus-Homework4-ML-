@@ -38,7 +38,7 @@ model = models.Sequential([
     layers.Conv2D(32, (3,3), strides=2, padding='same', activation='relu', kernel_regularizer=regularizers.l2(0.0001)),
     layers.Conv2D(64, (3,3), activation='relu', kernel_regularizer=regularizers.l2(0.0001)),
     layers.MaxPooling2D((2,2)),
-    layers.Conv2D(128, (3,3), activation='relu', kernel_regularizer=regularizers.l2(0.0001)),
+    layers.Conv2D(128, (3,3), activation='relu'),#, kernel_regularizer=regularizers.l2(0.0001)),
     layers.AveragePooling2D((2,2)),
     layers.Flatten(),
     
